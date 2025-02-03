@@ -1,0 +1,52 @@
+[
+    {
+        "task_name": "Provide verified general knowledge explanations with at least 2 sources and timestamps",
+        "steps": [
+            "Inquire about the specific general knowledge topic the user wants to know about.",
+            "Use the RAGWorker to search for reliable sources and gather information from the company's internal documentation and external verified sources.",
+            "Compile the gathered information into a clear and concise explanation, ensuring at least two sources are cited with timestamps.",
+            "Present the compiled explanation to the user, including the citations of the sources used.",
+            "Ask if the user needs further information or has additional queries related to the topic."
+        ]
+    },
+    {
+        "task_name": "Assist in discovering relevant academic papers with proper citation formats and at least 2 verified sources",
+        "steps": [
+            "Inquire about the specific academic topic or research area the user is interested in.",
+            "Utilize the RagMsgWorker to search for relevant academic papers and gather at least 2 verified sources based on the user's specified topic.",
+            "Provide the user with a list of the discovered academic papers along with proper citation formats.",
+            "Ask the user if they need more papers or if the provided information meets their requirements.",
+            "Offer additional assistance such as explaining how to access the full papers or guiding on citation guidelines if needed."
+        ]
+    },
+    {
+        "task_name": "Provide citation support for academic papers in various formats with verified sources and timestamps",
+        "steps": [
+            "Ask the user to provide the details of the academic paper or source they need to cite, including the authors, title, publication date, and any other relevant information.",
+            "Inquire about the citation format required (e.g., APA, MLA, Chicago).",
+            "Utilize the RAGWorker to retrieve verified citation information from the company's internal documentation or external databases.",
+            "Generate the citation in the specified format using the retrieved information.",
+            "Present the generated citation to the user for review and ask if any modifications or additional citations are needed.",
+            "If modifications are needed, gather the additional information or corrections from the user and update the citation accordingly.",
+            "Confirm with the user if they are satisfied with the citation and offer assistance with any additional academic research or citation needs."
+        ]
+    },
+    {
+        "task_name": "Explain technical concepts, particularly in STEM, with verified sources and timestamps",
+        "steps": [
+            "Explain technical concepts, particularly in STEM, with verified sources and timestamps"
+        ]
+    },
+    {
+        "task_name": "Provide detailed information on a specific topic with verified sources and timestamps",
+        "steps": [
+            "Inquire about the specific topic the user wants detailed information on.",
+            "Use the RAGWorker to search internal documentation and unstructured text data to gather detailed information on the specified topic.",
+            "Ensure that the gathered information is verified and up-to-date, including proper citations and timestamps.",
+            "Present the detailed information to the user along with the verified sources and timestamps.",
+            "Ask the user if they need further clarification or additional information on any subtopics related to their query.",
+            "Provide additional detailed information or clarification as requested by the user, ensuring all information is properly cited and verified.",
+            "Confirm if the user is satisfied with the provided information or if further assistance is needed."
+        ]
+    }
+]

@@ -56,15 +56,15 @@ class AgentOrg:
         # check the response, decide whether to give template response or not
         client = OpenAI()
         text = inputs["text"]
-        moderation_response = client.moderations.create(input=text).model_dump()
-        is_flagged = moderation_response["results"][0]["flagged"]
-        if is_flagged:
-            return_response = {
-                "answer": self.product_kwargs["safety_response"],
-                "parameters": params,
-                "has_follow_up": True
-            }
-            return return_response
+        # moderation_response = client.moderations.create(input=text).model_dump()
+        # is_flagged = moderation_response["results"][0]["flagged"]
+        # if is_flagged:
+        #     return_response = {
+        #         "answer": self.product_kwargs["safety_response"],
+        #         "parameters": params,
+        #         "has_follow_up": True
+        #     }
+        #     return return_response
 
         ##### TaskGraph Chain
         taskgraph_inputs = {

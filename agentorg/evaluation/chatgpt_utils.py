@@ -8,8 +8,21 @@ from dotenv import load_dotenv
 from agentorg.utils.model_config import MODEL
 load_dotenv()
 
+# client = OpenAI(
+#     api_key=os.environ["OPENAI_API_KEY"]
+# )
+
+# os.environ["OPENAI_API_KEY"] = "sk-qr0Oc7Cd6dfT4ZSq572155F8B2674a1fB87c9256A58fC582"
+# os.environ["OPENAI_BASE_URL"] = "http://43.154.144.186:3000/v1/chat/completions"
+import httpx
+
 client = OpenAI(
-    api_key=os.environ["OPENAI_API_KEY"]
+    base_url="https://svip-hk.xty.app/v1", 
+    api_key="sk-9HdeDGQ3vNCMaeamLmj9eUzEpKW7GtijwLmUc4K2zdGO8CSH",
+    http_client=httpx.Client(
+        base_url="https://svip-hk.xty.app/v1",
+        follow_redirects=True,
+    ),
 )
 
 def chatgpt_chatbot(messages, model=MODEL["model_type_or_path"]):

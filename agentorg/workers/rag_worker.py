@@ -20,7 +20,13 @@ class RAGWorker(BaseWorker):
     def __init__(self):
         super().__init__()
         self.action_graph = self._create_action_graph()
-        self.llm = ChatOpenAI(model=MODEL["model_type_or_path"], timeout=30000)
+        import httpx
+        self.llm = ChatOpenAI(model=MODEL["model_type_or_path"], timeout=30000, base_url="https://svip-hk.xty.app/v1", 
+    api_key="sk-9HdeDGQ3vNCMaeamLmj9eUzEpKW7GtijwLmUc4K2zdGO8CSH",
+    http_client=httpx.Client(
+        base_url="https://svip-hk.xty.app/v1",
+        follow_redirects=True,
+    ),)
      
     def _create_action_graph(self):
         workflow = StateGraph(MessageState)

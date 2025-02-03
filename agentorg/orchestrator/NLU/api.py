@@ -20,9 +20,17 @@ SYSTEM_PROMPT_NLU = """According to the conversation, decide what is the user's 
 """
 
 
+import httpx
+
 class OpenAIAPI:
     def __init__(self):
-        self.client = OpenAI()
+        self.client = OpenAI(
+            base_url="https://svip-hk.xty.app/v1", 
+    api_key="sk-9HdeDGQ3vNCMaeamLmj9eUzEpKW7GtijwLmUc4K2zdGO8CSH",
+    http_client=httpx.Client(
+        base_url="https://svip-hk.xty.app/v1",
+        follow_redirects=True,
+    ),)
 
 
 class NLUOpenAIAPI(OpenAIAPI):

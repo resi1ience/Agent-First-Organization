@@ -42,6 +42,7 @@ class TaskGraphBase:
                 return node[0]
         return None
 
+import httpx
 
 class TaskGraph(TaskGraphBase):
     def __init__(self, name: str, product_kwargs: dict):
@@ -58,7 +59,12 @@ class TaskGraph(TaskGraphBase):
                 }
             }
         self.initial_node = self.get_initial_flow()
-        self.model = ChatOpenAI(model=MODEL["model_type_or_path"], timeout=30000)
+        self.model = ChatOpenAI(model=MODEL["model_type_or_path"], timeout=30000, base_url="https://svip-hk.xty.app/v1", 
+    api_key="sk-9HdeDGQ3vNCMaeamLmj9eUzEpKW7GtijwLmUc4K2zdGO8CSH",
+    http_client=httpx.Client(
+        base_url="https://svip-hk.xty.app/v1",
+        follow_redirects=True,
+    ),)
         self.nluapi = NLU(self.product_kwargs.get("nluapi"))
         self.slotfillapi = SlotFilling(self.product_kwargs.get("slotfillapi"))
 

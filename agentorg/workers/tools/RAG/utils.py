@@ -30,13 +30,26 @@ class FaissRetriever:
         self.texts = texts
         self.index_path = index_path
         self.embedding_model_name = embedding_model_name
-        self.llm = ChatOpenAI(model=MODEL["model_type_or_path"], timeout=30000)
+        import httpx
+        self.llm = ChatOpenAI(model=MODEL["model_type_or_path"], timeout=30000, base_url="https://svip-hk.xty.app/v1", 
+    api_key="sk-9HdeDGQ3vNCMaeamLmj9eUzEpKW7GtijwLmUc4K2zdGO8CSH",
+    http_client=httpx.Client(
+        base_url="https://svip-hk.xty.app/v1",
+        follow_redirects=True,
+    ),)
         self.retriever = self._init_retriever()
 
     def _init_retriever(self, **kwargs):
         # initiate FAISS retriever
+        import httpx
         embedding_model = OpenAIEmbeddings(
             model=self.embedding_model_name,
+            base_url="https://svip-hk.xty.app/v1", 
+    api_key="sk-9HdeDGQ3vNCMaeamLmj9eUzEpKW7GtijwLmUc4K2zdGO8CSH",
+    http_client=httpx.Client(
+        base_url="https://svip-hk.xty.app/v1",
+        follow_redirects=True,
+    ),
         )
         docsearch = FAISS.from_documents(self.texts, embedding_model)
         retriever = docsearch.as_retriever(**kwargs)

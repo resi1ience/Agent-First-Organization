@@ -24,7 +24,13 @@ class DataBaseWorker(BaseWorker):
     description = "Help the user with actions related to customer support like a booking system with structured data, always involving search, insert, update, and delete operations."
 
     def __init__(self):
-        self.llm = ChatOpenAI(model=MODEL["model_type_or_path"], timeout=30000)
+        import httpx
+        self.llm = ChatOpenAI(model=MODEL["model_type_or_path"], timeout=30000, base_url="https://svip-hk.xty.app/v1", 
+    api_key="sk-9HdeDGQ3vNCMaeamLmj9eUzEpKW7GtijwLmUc4K2zdGO8CSH",
+    http_client=httpx.Client(
+        base_url="https://svip-hk.xty.app/v1",
+        follow_redirects=True,
+    ),)
         self.actions = {
             "SearchShow": "Search for shows", 
             "BookShow": "Book a show", 

@@ -22,7 +22,13 @@ class DefaultWorker(BaseWorker):
 
     def __init__(self):
         super().__init__()
-        self.llm = ChatOpenAI(model=MODEL["model_type_or_path"], timeout=30000)
+        import httpx
+        self.llm = ChatOpenAI(model=MODEL["model_type_or_path"], timeout=30000, base_url="https://svip-hk.xty.app/v1", 
+    api_key="sk-9HdeDGQ3vNCMaeamLmj9eUzEpKW7GtijwLmUc4K2zdGO8CSH",
+    http_client=httpx.Client(
+        base_url="https://svip-hk.xty.app/v1",
+        follow_redirects=True,
+    ),)
         self.base_choice = "MessageWorker"
         available_workers = os.getenv("AVAILABLE_WORKERS", "").split(",")
         self.available_workers = {name: WORKER_REGISTRY[name].description for name in available_workers if name != "DefaultWorker"}

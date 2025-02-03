@@ -1,0 +1,697 @@
+{
+    "nodes": [
+        [
+            "0",
+            {
+                "name": "MessageWorker",
+                "attribute": {
+                    "value": "Hello! I am your Knowledge & Research Assistant. How can I assist you with your research or provide you with verified information today? Feel free to ask about general knowledge topics or specific academic queries, and I will provide you with detailed explanations and proper citations.",
+                    "task": "start message",
+                    "directed": false
+                },
+                "limit": 1,
+                "type": "start"
+            }
+        ],
+        [
+            "1",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "Could you please specify the general knowledge topic you are interested in?",
+                    "task": "Inquire about the specific general knowledge topic the user wants to know about.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "2",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "",
+                    "task": "Use the RAGWorker to search for reliable sources and gather information from the company's internal documentation and external verified sources.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "3",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "Here is the information I found on the topic: [Explanation]. Sources: Source 1 (Timestamp), Source 2 (Timestamp).",
+                    "task": "Compile the gathered information into a clear and concise explanation, ensuring at least two sources are cited with timestamps.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "4",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "Based on the information gathered, here is a detailed explanation: [Explanation]. This information is sourced from Source 1 (Timestamp) and Source 2 (Timestamp).",
+                    "task": "Present the compiled explanation to the user, including the citations of the sources used.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "5",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "Do you need any further information or have additional queries related to this topic?",
+                    "task": "Ask if the user needs further information or has additional queries related to the topic.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "6",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "Could you please specify the academic topic or research area you are interested in?",
+                    "task": "Inquire about the specific academic topic or research area the user is interested in.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "7",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "",
+                    "task": "Utilize the RagMsgWorker to search for relevant academic papers and gather at least 2 verified sources based on the user's specified topic.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "8",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "Here are some academic papers on your specified topic along with their proper citation formats.",
+                    "task": "Provide the user with a list of the discovered academic papers along with proper citation formats.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "9",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "Do you need more papers or does the provided information meet your requirements?",
+                    "task": "Ask the user if they need more papers or if the provided information meets their requirements.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "10",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "Would you like assistance with accessing the full papers or guidance on citation guidelines?",
+                    "task": "Offer additional assistance such as explaining how to access the full papers or guiding on citation guidelines if needed.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "11",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "Could you please provide the details of the academic paper or source you need to cite, including the authors, title, publication date, and any other relevant information?",
+                    "task": "Ask the user to provide the details of the academic paper or source they need to cite, including the authors, title, publication date, and any other relevant information.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "12",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "What citation format do you need for this source? Options include APA, MLA, Chicago, etc.",
+                    "task": "Inquire about the citation format required (e.g., APA, MLA, Chicago).",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "13",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "",
+                    "task": "Utilize the RAGWorker to retrieve verified citation information from the company's internal documentation or external databases.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "14",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "",
+                    "task": "Generate the citation in the specified format using the retrieved information.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "15",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "Here is the generated citation in the requested format. Please review it and let me know if any modifications or additional citations are needed.",
+                    "task": "Present the generated citation to the user for review and ask if any modifications or additional citations are needed.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "16",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "Please provide the additional information or corrections, and I will update the citation accordingly.",
+                    "task": "If modifications are needed, gather the additional information or corrections from the user and update the citation accordingly.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "17",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "Are you satisfied with the citation? Do you need any further assistance with academic research or additional citations?",
+                    "task": "Confirm with the user if they are satisfied with the citation and offer assistance with any additional academic research or citation needs.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "18",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "Here is the explanation of the concept you asked about, along with verified sources and timestamps for your reference.",
+                    "task": "Explain technical concepts, particularly in STEM, with verified sources and timestamps.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "19",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "Could you please specify the topic you would like more detailed information on?",
+                    "task": "Inquire about the specific topic the user wants detailed information on.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "20",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "",
+                    "task": "Use the RAGWorker to search internal documentation and unstructured text data to gather detailed information on the specified topic.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "21",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "",
+                    "task": "Ensure that the gathered information is verified and up-to-date, including proper citations and timestamps.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "22",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "Here is the detailed information you requested, along with the sources and timestamps for verification.",
+                    "task": "Present the detailed information to the user along with the verified sources and timestamps.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "23",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "Do you need further clarification or additional information on any subtopics related to your query?",
+                    "task": "Ask the user if they need further clarification or additional information on any subtopics related to their query.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "24",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "",
+                    "task": "Provide additional detailed information or clarification as requested by the user, ensuring all information is properly cited and verified.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "25",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "Are you satisfied with the provided information, or do you need further assistance?",
+                    "task": "Confirm if the user is satisfied with the provided information or if further assistance is needed.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ]
+    ],
+    "edges": [
+        [
+            "0",
+            "1",
+            {
+                "intent": "User wants to verify general knowledge",
+                "attribute": {
+                    "weight": 1,
+                    "pred": true,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "1",
+            "2",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "2",
+            "3",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "3",
+            "4",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "4",
+            "5",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "0",
+            "6",
+            {
+                "intent": "User wants to discover academic papers",
+                "attribute": {
+                    "weight": 1,
+                    "pred": true,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "6",
+            "7",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "7",
+            "8",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "8",
+            "9",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "9",
+            "10",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "0",
+            "11",
+            {
+                "intent": "User needs help with citation support",
+                "attribute": {
+                    "weight": 1,
+                    "pred": true,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "11",
+            "12",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "12",
+            "13",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "13",
+            "14",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "14",
+            "15",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "15",
+            "16",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "16",
+            "17",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "0",
+            "18",
+            {
+                "intent": "User wants to understand technical concepts",
+                "attribute": {
+                    "weight": 1,
+                    "pred": true,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "0",
+            "19",
+            {
+                "intent": "User needs information on a specific topic",
+                "attribute": {
+                    "weight": 1,
+                    "pred": true,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "19",
+            "20",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "20",
+            "21",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "21",
+            "22",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "22",
+            "23",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "23",
+            "24",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "24",
+            "25",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ]
+    ],
+    "role": "Knowledge & Research Assistant",
+    "user_objective": "Provide verified general knowledge explanations and academic research support with proper citation formats.",
+    "builder_objective": "Automatically validate answer accuracy against multiple sources and flag conflicting information",
+    "domain": "Knowledge Service & Research Support",
+    "intro": "This assistant specializes in:\n1. General Knowledge: Cross-domain factual verification\n2. Academic Research: Paper discovery & citation support\n3. Technical Concepts: STEM terminology explanations\nResponse guarantee: All answers include at least 2 verified sources with timestamps",
+    "task_docs": [
+        {
+            "source": "https://www.wikipedia.org/",
+            "desc": "Multilingual general knowledge base",
+            "num": 20
+        },
+        {
+            "source": "https://www.britannica.com/",
+            "desc": "Authoritative encyclopedia",
+            "num": 15
+        },
+        {
+            "source": "https://scholar.google.com/",
+            "desc": "Academic paper search engine",
+            "num": 50
+        },
+        {
+            "source": "https://www.jstor.org/",
+            "desc": "Academic journal archive",
+            "num": 40
+        }
+    ],
+    "rag_docs": [
+        {
+            "source": "https://en.wikipedia.org/wiki/Special:Random",
+            "desc": "Random knowledge validation",
+            "num": 10
+        },
+        {
+            "source": "https://arxiv.org/",
+            "desc": "Preprint scientific papers",
+            "num": 30
+        },
+        {
+            "source": "https://ieeexplore.ieee.org/Xplore/home.jsp",
+            "desc": "Technical literature database",
+            "num": 25
+        }
+    ],
+    "tasks": [],
+    "workers": [
+        "RAGWorker",
+        "RagMsgWorker",
+        "MessageWorker",
+        "DefaultWorker"
+    ],
+    "nluapi": "http://localhost:55135/nlu/predict",
+    "slotfillapi": "http://localhost:55135/slotfill/predict"
+}

@@ -1,0 +1,53 @@
+{
+    "role": "Knowledge & Research Assistant",
+    "user_objective": "Provide verified general knowledge explanations and academic research support with proper citation formats.",
+    "builder_objective": "Automatically validate answer accuracy against multiple sources and flag conflicting information",
+    "domain": "Knowledge Service & Research Support",
+    "intro": "This assistant specializes in:\n1. General Knowledge: Cross-domain factual verification\n2. Academic Research: Paper discovery & citation support\n3. Technical Concepts: STEM terminology explanations\nResponse guarantee: All answers include at least 2 verified sources with timestamps",
+    "task_docs": [
+        {
+            "source": "https://www.wikipedia.org/",
+            "desc": "Multilingual general knowledge base",
+            "num": 20
+        },
+        {
+            "source": "https://www.britannica.com/",
+            "desc": "Authoritative encyclopedia",
+            "num": 15
+        },
+        {
+            "source": "https://scholar.google.com/",
+            "desc": "Academic paper search engine",
+            "num": 50
+        },
+        {
+            "source": "https://www.jstor.org/",
+            "desc": "Academic journal archive",
+            "num": 40
+        }
+    ],
+    "rag_docs": [
+        {
+            "source": "https://en.wikipedia.org/wiki/Special:Random",
+            "desc": "Random knowledge validation",
+            "num": 10
+        },
+        {
+            "source": "https://arxiv.org/",
+            "desc": "Preprint scientific papers",
+            "num": 30
+        },
+        {
+            "source": "https://ieeexplore.ieee.org/Xplore/home.jsp",
+            "desc": "Technical literature database",
+            "num": 25
+        }
+    ],
+    "tasks": [],
+    "workers": [
+        "RAGWorker",
+        "RagMsgWorker",
+        "MessageWorker",
+        "DefaultWorker"
+    ]
+}
